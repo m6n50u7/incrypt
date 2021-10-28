@@ -2,7 +2,9 @@
 a new encryption algorithm that uses increments instead of XOR
 how to compile for linux:
 >gcc incrypt.c -o incrypt
+
 >gcc dicrypt.c -o dicrypt
+
 how to use the tool:
 incrypt SRC DEST PASS
 dicrypt SRC DEST PASS
