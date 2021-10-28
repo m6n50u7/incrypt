@@ -1,13 +1,11 @@
 # incrypt
-a new encryption algorithm that uses increments instead of XOR
+a new encryption algorithm that uses increments instead of XOR.<br />
 how to compile for linux:
->gcc incrypt.c -o incrypt
-
+>gcc incrypt.c -o incrypt<br />
 >gcc dicrypt.c -o dicrypt
 
 how to use the tool:
->incrypt SRC DEST PASS
-
+>incrypt SRC DEST PASS<br />
 >dicrypt SRC DEST PASS
 
 # Features:
