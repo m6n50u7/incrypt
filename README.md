@@ -6,8 +6,10 @@ how to compile for linux:
 >gcc dicrypt.c -o dicrypt
 
 how to use the tool:
-incrypt SRC DEST PASS
-dicrypt SRC DEST PASS
+>incrypt SRC DEST PASS
+
+>dicrypt SRC DEST PASS
+
 # Features:
 - password's size can have any length between 1 byte and file size.
 - the algorithm is very fast.
