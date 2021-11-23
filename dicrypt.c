@@ -11,15 +11,17 @@ int main(int argn, char* args[])
 	char tmpdst;
 	FILE *fptr1 = fopen(args[1], "rb");
 	FILE *fptr2 = fopen(args[2], "wb");
-	fread(&tmpdst, 1, 1, fptr1);
-	for(int curs = 0; curs == ftell(fptr1) - 1; ++curs)
+	fseek(fptr1, 0, SEEK_END);
+	long int size = ftell(fptr1);
+	fseek(fptr1, 0, SEEK_SET);
+	for(int curs = 0; curs < size; curs++)
 	{
 		if(args[3][i] == '\0')
 			i = 0;
-		tmpdst = (tmpdst - args[3][i]) % 256;
-		i++;
 		fwrite(&tmpdst, 1, 1, fptr2);
+		tmpdst = (tmpdst - args[3][i]) % 256;
 		fread(&tmpdst, 1, 1, fptr1);
+		i++;
 	}
 	fclose(fptr1);
 	fclose(fptr2);
