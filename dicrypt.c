@@ -14,7 +14,7 @@ int main(int argn, char* args[])
 	fseek(fptr1, 0, SEEK_END);
 	long int size = ftell(fptr1);
 	fseek(fptr1, 0, SEEK_SET);
-	for(int curs = 0; curs < size; curs++)
+	for(long int curs = 0; curs < size; curs++)
 	{
 		if(args[3][i] == '\0')
 			i = 0;
