@@ -18,9 +18,9 @@ int main(int argn, char* args[])
 	{
 		if(args[3][i] == '\0')
 			i = 0;
-		fwrite(&tmpdst, 1, 1, fptr2);
+		fread(&tmpdst, 1, 1, fptr2);
 		tmpdst = (tmpdst - args[3][i]) % 256;
-		fread(&tmpdst, 1, 1, fptr1);
+		fwrite(&tmpdst, 1, 1, fptr1);
 		i++;
 	}
 	fclose(fptr1);
