@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-int monocrypt(char* file, char* pass)
+void buffdicrypt(char* pass)
+{
+	int buff, i = 0;
+	while((buff = getchar()) != EOF)
+	{
+		if(pass[i] == '\0')
+			i = 0;
+		putchar((buff - pass[i]) % 256);
+		i++;
+	}
+}
+void monodicrypt(char* file, char* pass)
 {
 	int i = 0;
 	char tmpdst;
@@ -20,7 +31,7 @@ int monocrypt(char* file, char* pass)
 	}
 	fclose(fptr1);
 }
-int duocrypt(char* txtfile, char* incfile, char* pass)
+void duodicrypt(char* txtfile, char* incfile, char* pass)
 {
 	int i = 0;
 	char tmpdst;
@@ -43,14 +54,16 @@ int duocrypt(char* txtfile, char* incfile, char* pass)
 }
 int main(int argn, char* args[])
 {
-	if(argn != 4 && argn != 3)
+	if(argn > 4 && argn < 2)
 	{
-		printf("a file encryption tool.\nusage:\nfor preserving original file: %s SRC DEST PASS\nto overwrite the original file: %s FILE PASS\n", args[0], args[0]);
+		printf("a file encryption tool.\nusage:\nfor preserving original file: %s SRC DEST PASS\nto overwrite the original file: %s FILE PASS\n%s PASS\nto encrypt the beffer.", args[0], args[0], args[0]);
 		return 1;
 	}
 	if(argn == 3)
-		monocrypt(args[1], args[2]);
+		monodicrypt(args[1], args[2]);
+	else if(argn == 4)
+		duodicrypt(args[1], args[2], args[3]);
 	else
-		duocrypt(args[1], args[2], args[3]);
+		buffdicrypt(args[1]);
 	return 0;
 }
