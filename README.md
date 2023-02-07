@@ -5,13 +5,13 @@ how to compile for linux:
 >gcc dicrypt.c -o dicrypt
 
 how to use the tool:<br/>
-to encrypt file to a new file:<br/>
+-to encrypt file to a new file:<br/>
 >incrypt SRC DEST PASS<br />
 >dicrypt SRC DEST PASS<br/>
-to encrypt the file itself:<br/>
+-to encrypt the file itself:<br/>
 >incrypt FILE PASS<br />
 >dicrypt FILE PASS<br/>
-to encrypt the buffer:
+-to encrypt the buffer:
 >incrypt PASS<br />
 >dicrypt PASS
 # Features:
