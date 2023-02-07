@@ -19,7 +19,7 @@ to encrypt the buffer:
 # Features:
 - password's size can have any length between 1 byte and file size.
 - the algorithm is very fast.
-- you can use the decryption algorithm as the encryptiin algorithm.
+- you can use the decryption algorithm as encryption algorithm.
 - the algorithm support both ASCII and UTF8 and can support other codes.
 # Notes:
 - if the password's size was bigger than the file itself, the extra bytes will be useless.
