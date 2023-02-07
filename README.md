@@ -5,9 +5,15 @@ how to compile for linux:
 >gcc dicrypt.c -o dicrypt
 
 how to use the tool:
+to encrypt file to a new file:
 >incrypt SRC DEST PASS<br />
 >dicrypt SRC DEST PASS
-
+to encrypt the file itself:
+>incrypt FILE PASS<br />
+>dicrypt FILE PASS
+to encrypt the buffer:
+>incrypt PASS<br />
+>dicrypt PASS
 # Features:
 - password's size can have any length between 1 byte and file size.
 - the algorithm is very fast.
