@@ -1,5 +1,5 @@
 # incrypt
-a new encryption algorithm that uses increments instead of XOR.<br />
+a file encryption tool using vigener cipher.<br />
 how to compile for linux:
 >gcc incrypt.c -o incrypt<br />
 >gcc dicrypt.c -o dicrypt
